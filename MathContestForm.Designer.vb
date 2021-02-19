@@ -126,7 +126,7 @@ Partial Class MathContestForm
         Me.CurrentMathProblemGroupBox.Location = New System.Drawing.Point(12, 109)
         Me.CurrentMathProblemGroupBox.Name = "CurrentMathProblemGroupBox"
         Me.CurrentMathProblemGroupBox.Size = New System.Drawing.Size(266, 329)
-        Me.CurrentMathProblemGroupBox.TabIndex = 0
+        Me.CurrentMathProblemGroupBox.TabIndex = 1
         Me.CurrentMathProblemGroupBox.TabStop = False
         Me.CurrentMathProblemGroupBox.Text = "Current Math Problem"
         '
@@ -238,7 +238,7 @@ Partial Class MathContestForm
         Me.GroupBox4.Location = New System.Drawing.Point(284, 109)
         Me.GroupBox4.Name = "GroupBox4"
         Me.GroupBox4.Size = New System.Drawing.Size(216, 329)
-        Me.GroupBox4.TabIndex = 1
+        Me.GroupBox4.TabIndex = 2
         Me.GroupBox4.TabStop = False
         Me.GroupBox4.Text = "Math Problem Type"
         '
@@ -249,6 +249,7 @@ Partial Class MathContestForm
         Me.DivideRadioButton.Name = "DivideRadioButton"
         Me.DivideRadioButton.Size = New System.Drawing.Size(68, 21)
         Me.DivideRadioButton.TabIndex = 3
+        Me.DivideRadioButton.TabStop = True
         Me.DivideRadioButton.Text = "Divide"
         Me.DivideRadioButton.UseVisualStyleBackColor = True
         '
@@ -259,6 +260,7 @@ Partial Class MathContestForm
         Me.MultiplyRadioButton.Name = "MultiplyRadioButton"
         Me.MultiplyRadioButton.Size = New System.Drawing.Size(76, 21)
         Me.MultiplyRadioButton.TabIndex = 2
+        Me.MultiplyRadioButton.TabStop = True
         Me.MultiplyRadioButton.Text = "Multiply"
         Me.MultiplyRadioButton.UseVisualStyleBackColor = True
         '
@@ -269,6 +271,7 @@ Partial Class MathContestForm
         Me.SubtractRadioButton.Name = "SubtractRadioButton"
         Me.SubtractRadioButton.Size = New System.Drawing.Size(82, 21)
         Me.SubtractRadioButton.TabIndex = 1
+        Me.SubtractRadioButton.TabStop = True
         Me.SubtractRadioButton.Text = "Subtract"
         Me.SubtractRadioButton.UseVisualStyleBackColor = True
         '
