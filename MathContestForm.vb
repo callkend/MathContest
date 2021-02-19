@@ -2,20 +2,19 @@
 'RCET0265
 'Spring 2021
 'Math Contest
-'
-
+'https://github.com/callkend/MathContest.git
 
 Option Explicit On
 Option Strict On
 
 Public Class MathContestForm
-
+    'Initializes the random numbers on startup. 
     Private Sub MathContestForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Randomize()
         FirstNumberTextBox.Text = CStr(CInt(Rnd() * 12))
         SecondNumberTextBox.Text = CStr(CInt(Rnd() * 12))
     End Sub
-
+    'Handles the submit button case
     Private Sub SubmitButton_Click(sender As Object, e As EventArgs) Handles SubmitButton.Click
         Dim nameProblem As Boolean = False
         Dim ageProblem As Boolean = False
@@ -29,6 +28,7 @@ Public Class MathContestForm
         Dim secondNumber As Integer = CInt(SecondNumberTextBox.Text)
         Dim studentNumber As Integer
 
+        'Checks for errors in the Name, Age, Grade, and Answer text boxes.
         If NameTextBox.Text = "" Then
             nameProblem = True
             errorMessage += "Name is blank "
@@ -55,7 +55,6 @@ Public Class MathContestForm
             End If
         End Try
 
-
         Select Case age
             Case < 7
                 invalidStudent = True
@@ -80,10 +79,12 @@ Public Class MathContestForm
             End If
         End Try
 
+        'If any errors reports problem to user.
         If nameProblem = True Or ageProblem = True Or gradeProblem = True Or noAnswer = True Then
             MessageBox.Show($"The following errors have occurred {errorMessage}")
         ElseIf invalidStudent = True Then
             MessageBox.Show("The Student doesn't qualify for the contest")
+            'Checks to see if the student answered correctly, and displays the result
         ElseIf AddRadioButton.Checked And studentNumber =
            firstNumber + secondNumber Then
             MessageBox.Show("Correct!!!!")
@@ -120,6 +121,7 @@ Public Class MathContestForm
 
     End Sub
 
+    'Clears entries and sets defaults again when clear is clicked.
     Private Sub ClearButton_Click(sender As Object, e As EventArgs) Handles ClearButton.Click
         Dim correctAndTotal() As Integer = CorrectCounter(True, True)
         NameTextBox.Text = ""
@@ -129,15 +131,18 @@ Public Class MathContestForm
         AddRadioButton.Checked = True
     End Sub
 
+    'Brings up a summary for the teacher of how the student did.
     Private Sub SummaryButton_Click(sender As Object, e As EventArgs) Handles SummaryButton.Click
         Dim correctAndTotal() As Integer = CorrectCounter(False, True)
         MessageBox.Show($"{NameTextBox.Text} got {correctAndTotal(0)} out of {correctAndTotal(1)} correct")
     End Sub
 
+    'Closes the Program
     Private Sub ExitButton_Click(sender As Object, e As EventArgs) Handles ExitButton.Click
         Me.Close()
     End Sub
 
+    'Holds the count of correct and total answers.
     Function CorrectCounter(correct As Boolean, read As Boolean) As Integer()
         Static correctAndTotal(1) As Integer
 
@@ -146,10 +151,12 @@ Public Class MathContestForm
             correctAndTotal(1) += 1
         ElseIf read = False Then
             correctAndTotal(1) += 1
+            'Used to clear the counter
         ElseIf correct = True And read = True Then
             correctAndTotal = {vbEmpty, vbEmpty}
         End If
 
+        'Replaces numbers in text boxes
         FirstNumberTextBox.Text = CStr(CInt(Rnd() * 12))
         SecondNumberTextBox.Text = CStr(CInt(Rnd() * 12))
 
