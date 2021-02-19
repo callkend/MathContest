@@ -22,6 +22,7 @@ Partial Class MathContestForm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.GradeLabel = New System.Windows.Forms.Label()
         Me.AgeLabel = New System.Windows.Forms.Label()
@@ -46,6 +47,7 @@ Partial Class MathContestForm
         Me.MultiplyRadioButton = New System.Windows.Forms.RadioButton()
         Me.SubtractRadioButton = New System.Windows.Forms.RadioButton()
         Me.AddRadioButton = New System.Windows.Forms.RadioButton()
+        Me.ToolTip = New System.Windows.Forms.ToolTip(Me.components)
         Me.GroupBox1.SuspendLayout()
         Me.CurrentMathProblemGroupBox.SuspendLayout()
         Me.ButtonsGroupBox.SuspendLayout()
@@ -198,7 +200,7 @@ Partial Class MathContestForm
         Me.SubmitButton.Name = "SubmitButton"
         Me.SubmitButton.Size = New System.Drawing.Size(270, 76)
         Me.SubmitButton.TabIndex = 2
-        Me.SubmitButton.Text = "Submit"
+        Me.SubmitButton.Text = "&Submit"
         Me.SubmitButton.UseVisualStyleBackColor = True
         '
         'ClearButton
@@ -207,7 +209,7 @@ Partial Class MathContestForm
         Me.ClearButton.Name = "ClearButton"
         Me.ClearButton.Size = New System.Drawing.Size(270, 76)
         Me.ClearButton.TabIndex = 3
-        Me.ClearButton.Text = "Clear"
+        Me.ClearButton.Text = "&Clear"
         Me.ClearButton.UseVisualStyleBackColor = True
         '
         'SummaryButton
@@ -216,7 +218,7 @@ Partial Class MathContestForm
         Me.SummaryButton.Name = "SummaryButton"
         Me.SummaryButton.Size = New System.Drawing.Size(270, 81)
         Me.SummaryButton.TabIndex = 4
-        Me.SummaryButton.Text = "Summary"
+        Me.SummaryButton.Text = "S&ummary"
         Me.SummaryButton.UseVisualStyleBackColor = True
         '
         'ExitButton
@@ -250,7 +252,7 @@ Partial Class MathContestForm
         Me.DivideRadioButton.Size = New System.Drawing.Size(68, 21)
         Me.DivideRadioButton.TabIndex = 3
         Me.DivideRadioButton.TabStop = True
-        Me.DivideRadioButton.Text = "Divide"
+        Me.DivideRadioButton.Text = "&Divide"
         Me.DivideRadioButton.UseVisualStyleBackColor = True
         '
         'MultiplyRadioButton
@@ -261,7 +263,7 @@ Partial Class MathContestForm
         Me.MultiplyRadioButton.Size = New System.Drawing.Size(76, 21)
         Me.MultiplyRadioButton.TabIndex = 2
         Me.MultiplyRadioButton.TabStop = True
-        Me.MultiplyRadioButton.Text = "Multiply"
+        Me.MultiplyRadioButton.Text = "&Multiply"
         Me.MultiplyRadioButton.UseVisualStyleBackColor = True
         '
         'SubtractRadioButton
@@ -272,7 +274,7 @@ Partial Class MathContestForm
         Me.SubtractRadioButton.Size = New System.Drawing.Size(82, 21)
         Me.SubtractRadioButton.TabIndex = 1
         Me.SubtractRadioButton.TabStop = True
-        Me.SubtractRadioButton.Text = "Subtract"
+        Me.SubtractRadioButton.Text = "Sub&tract"
         Me.SubtractRadioButton.UseVisualStyleBackColor = True
         '
         'AddRadioButton
@@ -284,7 +286,7 @@ Partial Class MathContestForm
         Me.AddRadioButton.Size = New System.Drawing.Size(54, 21)
         Me.AddRadioButton.TabIndex = 0
         Me.AddRadioButton.TabStop = True
-        Me.AddRadioButton.Text = "Add"
+        Me.AddRadioButton.Text = "&Add"
         Me.AddRadioButton.UseVisualStyleBackColor = True
         '
         'MathContestForm
@@ -335,4 +337,5 @@ Partial Class MathContestForm
     Friend WithEvents StudentNumberTextBox As TextBox
     Friend WithEvents SecondNumberTextBox As TextBox
     Friend WithEvents FirstNumberTextBox As TextBox
+    Friend WithEvents ToolTip As ToolTip
 End Class

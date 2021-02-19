@@ -40,6 +40,7 @@ Public Class MathContestForm
         Catch ex As Exception
             ageProblem = True
             errorMessage += "Age must contain a number "
+            AgeTextBox.Text = ""
             If nameProblem = False Then
                 AgeTextBox.Select()
             End If
@@ -50,6 +51,7 @@ Public Class MathContestForm
         Catch ex As Exception
             gradeProblem = True
             errorMessage += "Grade must contain a number "
+            GradeTextBox.Text = ""
             If nameProblem = False And ageProblem = False Then
                 GradeTextBox.Select()
             End If
@@ -73,7 +75,8 @@ Public Class MathContestForm
             studentNumber = CInt(StudentNumberTextBox.Text)
         Catch ex As Exception
             noAnswer = True
-            errorMessage += "student hasn't submitted an answer "
+            errorMessage += "student hasn't submitted an number "
+            StudentNumberTextBox.Text = ""
             If nameProblem = False And ageProblem = False And gradeProblem = False Then
                 StudentNumberTextBox.Select()
             End If
@@ -81,9 +84,9 @@ Public Class MathContestForm
 
         'If any errors reports problem to user.
         If nameProblem = True Or ageProblem = True Or gradeProblem = True Or noAnswer = True Then
-            MessageBox.Show($"The following errors have occurred {errorMessage}")
+            MessageBox.Show($"Message to User the following errors have occurred {errorMessage}")
         ElseIf invalidStudent = True Then
-            MessageBox.Show("The Student doesn't qualify for the contest")
+            MessageBox.Show("Student not eligible to compete")
             'Checks to see if the student answered correctly, and displays the result
         ElseIf AddRadioButton.Checked And studentNumber =
            firstNumber + secondNumber Then
