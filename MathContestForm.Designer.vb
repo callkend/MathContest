@@ -289,6 +289,9 @@ Partial Class MathContestForm
         Me.AddRadioButton.Text = "&Add"
         Me.AddRadioButton.UseVisualStyleBackColor = True
         '
+        'ToolTip
+        '
+        '
         'MathContestForm
         '
         Me.AcceptButton = Me.SubmitButton

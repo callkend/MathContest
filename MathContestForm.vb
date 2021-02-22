@@ -8,12 +8,21 @@ Option Explicit On
 Option Strict On
 
 Public Class MathContestForm
-    'Initializes the random numbers on startup. 
+    'Initializes the random numbers on startup and sets tool tips
     Private Sub MathContestForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Randomize()
         FirstNumberTextBox.Text = CStr(CInt(Rnd() * 12))
         SecondNumberTextBox.Text = CStr(CInt(Rnd() * 12))
+        ToolTip.SetToolTip(SubmitButton, "Submit Result")
+        ToolTip.SetToolTip(ExitButton, "Exit Program")
+        ToolTip.SetToolTip(SummaryButton, "Summary of student's answers")
+        ToolTip.SetToolTip(ClearButton, "Clears entries and student's summary")
+        ToolTip.SetToolTip(AddRadioButton, "Do Addition")
+        ToolTip.SetToolTip(SubtractRadioButton, "Do Subtraction")
+        ToolTip.SetToolTip(MultiplyRadioButton, "Do Multiplication")
+        ToolTip.SetToolTip(DivideRadioButton, "Do Division")
     End Sub
+
     'Handles the submit button case
     Private Sub SubmitButton_Click(sender As Object, e As EventArgs) Handles SubmitButton.Click
         Dim nameProblem As Boolean = False
@@ -165,4 +174,5 @@ Public Class MathContestForm
 
         Return correctAndTotal
     End Function
+
 End Class
