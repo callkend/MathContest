@@ -191,7 +191,7 @@ Partial Class MathContestForm
         Me.ButtonsGroupBox.Location = New System.Drawing.Point(506, 12)
         Me.ButtonsGroupBox.Name = "ButtonsGroupBox"
         Me.ButtonsGroupBox.Size = New System.Drawing.Size(282, 426)
-        Me.ButtonsGroupBox.TabIndex = 0
+        Me.ButtonsGroupBox.TabIndex = 3
         Me.ButtonsGroupBox.TabStop = False
         '
         'SubmitButton
@@ -288,9 +288,6 @@ Partial Class MathContestForm
         Me.AddRadioButton.TabStop = True
         Me.AddRadioButton.Text = "&Add"
         Me.AddRadioButton.UseVisualStyleBackColor = True
-        '
-        'ToolTip
-        '
         '
         'MathContestForm
         '

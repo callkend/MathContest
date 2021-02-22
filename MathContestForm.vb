@@ -13,6 +13,7 @@ Public Class MathContestForm
         Randomize()
         FirstNumberTextBox.Text = CStr(CInt(Rnd() * 12))
         SecondNumberTextBox.Text = CStr(CInt(Rnd() * 12))
+
         ToolTip.SetToolTip(SubmitButton, "Submit Result")
         ToolTip.SetToolTip(ExitButton, "Exit Program")
         ToolTip.SetToolTip(SummaryButton, "Summary of student's answers")
@@ -21,13 +22,15 @@ Public Class MathContestForm
         ToolTip.SetToolTip(SubtractRadioButton, "Do Subtraction")
         ToolTip.SetToolTip(MultiplyRadioButton, "Do Multiplication")
         ToolTip.SetToolTip(DivideRadioButton, "Do Division")
+
     End Sub
 
     'Handles the submit button case
     Private Sub SubmitButton_Click(sender As Object, e As EventArgs) Handles SubmitButton.Click
+
         Dim nameProblem As Boolean = False
         Dim ageProblem As Boolean = False
-        Dim gradeProblem As Boolean
+        Dim gradeProblem As Boolean = False
         Dim noAnswer As Boolean
         Dim invalidStudent As Boolean
         Dim age As Integer
@@ -96,6 +99,7 @@ Public Class MathContestForm
             MessageBox.Show($"Message to User the following errors have occurred {errorMessage}")
         ElseIf invalidStudent = True Then
             MessageBox.Show("Student not eligible to compete")
+
             'Checks to see if the student answered correctly, and displays the result
         ElseIf AddRadioButton.Checked And studentNumber =
            firstNumber + secondNumber Then
@@ -105,6 +109,7 @@ Public Class MathContestForm
             firstNumber + secondNumber Then
             MessageBox.Show($"Incorrect. The correct answer is {firstNumber + secondNumber}")
             CorrectCounter(False, False)
+
         ElseIf SubtractRadioButton.Checked And studentNumber =
             firstNumber - secondNumber Then
             MessageBox.Show("Correct!!!!")
@@ -113,6 +118,7 @@ Public Class MathContestForm
             firstNumber - secondNumber Then
             MessageBox.Show($"Incorrect. The correct answer is {firstNumber - secondNumber}")
             CorrectCounter(False, False)
+
         ElseIf MultiplyRadioButton.Checked And studentNumber =
             firstNumber * secondNumber Then
             MessageBox.Show("Correct!!!!")
@@ -121,6 +127,7 @@ Public Class MathContestForm
             firstNumber * secondNumber Then
             MessageBox.Show($"Incorrect. The correct answer is {firstNumber * secondNumber}")
             CorrectCounter(False, False)
+
         ElseIf DivideRadioButton.Checked And studentNumber =
             CInt(firstNumber / secondNumber) Then
             MessageBox.Show("Correct!!!!")
@@ -135,7 +142,9 @@ Public Class MathContestForm
 
     'Clears entries and sets defaults again when clear is clicked.
     Private Sub ClearButton_Click(sender As Object, e As EventArgs) Handles ClearButton.Click
+
         Dim correctAndTotal() As Integer = CorrectCounter(True, True)
+
         NameTextBox.Text = ""
         AgeTextBox.Text = ""
         GradeTextBox.Text = ""
@@ -145,17 +154,23 @@ Public Class MathContestForm
 
     'Brings up a summary for the teacher of how the student did.
     Private Sub SummaryButton_Click(sender As Object, e As EventArgs) Handles SummaryButton.Click
+
         Dim correctAndTotal() As Integer = CorrectCounter(False, True)
+
         MessageBox.Show($"{NameTextBox.Text} got {correctAndTotal(0)} out of {correctAndTotal(1)} correct")
+
     End Sub
 
     'Closes the Program
     Private Sub ExitButton_Click(sender As Object, e As EventArgs) Handles ExitButton.Click
+
         Me.Close()
+
     End Sub
 
     'Holds the count of correct and total answers.
     Function CorrectCounter(correct As Boolean, read As Boolean) As Integer()
+
         Static correctAndTotal(1) As Integer
 
         If correct = True And read = False Then
@@ -173,6 +188,7 @@ Public Class MathContestForm
         SecondNumberTextBox.Text = CStr(CInt(Rnd() * 12))
 
         Return correctAndTotal
+
     End Function
 
 End Class
